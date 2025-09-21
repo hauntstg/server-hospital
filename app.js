@@ -53,6 +53,10 @@ app.use("/admin", authRoutes);
 
 const PORT = process.env.PORT || 5000;
 // sequelize.sync({ alter: true });
+sequelize
+  .sync({ alter: true })
+  .then(() => console.log("DB synced"))
+  .catch(console.error);
 app.listen(PORT, async () => {
   try {
     await sequelize.authenticate();
