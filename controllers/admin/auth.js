@@ -121,3 +121,10 @@ exports.getUser = async (req, res, next) => {
     cart: user.cart,
   });
 };
+
+exports.checkHealth = async (req, res, next) => {
+  res.status(200).json({
+    status: "ok",
+    timestamp: new Date().toISOString(),
+  });
+};

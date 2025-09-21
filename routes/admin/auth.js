@@ -12,4 +12,6 @@ router.post("/dang-xuat", authController.logout);
 
 router.get("/profile", authGuard, authController.getProfile);
 
+router.get("/check-health", authController.checkHealth);
+
 module.exports = router;
